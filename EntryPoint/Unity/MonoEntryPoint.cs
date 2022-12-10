@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Retrover.EntryPoint.Unity
+namespace Retrover.MobileRider.EntryPoint.Unity
 {
     public class MonoEntryPoint : MonoBehaviour
     {

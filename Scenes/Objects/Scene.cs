@@ -1,10 +1,8 @@
-﻿using Retrover.Scenes.Contracts;
+﻿using Cysharp.Threading.Tasks;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace Retrover.Scenes.Objects
+namespace Retrover.MobileRider.Scenes.Objects
 {
     public class Scene : IEquatable<Scene>, IEquatable<string>
     {
@@ -15,9 +13,9 @@ namespace Retrover.Scenes.Objects
 
         private readonly string _name;
 
-        public void LoadBy(ISceneSwitch sceneSwitch)
+        public async UniTask LoadAsync()
         {
-            sceneSwitch.LoadSceneAsync(_name);
+            await SceneManager.LoadSceneAsync(_name);
         }
 
         public bool Equals(string other)
